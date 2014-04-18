@@ -1,0 +1,33 @@
+.home-reg-form {
+	background: rgba(242, 242, 242, .5);
+	min-height: 90px;
+	border-radius: 3px;
+	padding: 20px;
+}
+
+.home-reg-form input {
+	height: 3.15rem;
+	margin: 0 10px;
+	width: 36%;
+	padding-left: 50px;
+	display: inline-block;
+}
+
+.home-reg-form input[type="text"] {
+	background-image: url(//dm-util.s3.amazonaws.com/duda_website/img/home/one/reg-email.png);
+	background-repeat: no-repeat;
+	background-position: 5% 38%;	
+}
+
+.home-reg-form input[type="password"] {
+	background-image: url(//dm-util.s3.amazonaws.com/duda_website/img/home/one/reg-password.png);
+	background-repeat: no-repeat;
+	background-position: 5% 50%;
+
+}
+
+.home-reg-form input[type="submit"] {
+	width: 20%;
+	float: right;
+	padding-left: 1.9rem;
+}

@@ -1,0 +1,326 @@
+@media (max-width: 64em) {
+	.medium-down-centered {
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		float: none!important;
+	}
+	.medium-p100-0-0 {
+		padding-top: 100px;
+	}
+
+	.second-fixed {
+		display: none;
+	}
+	
+	.one-home {
+		background: url(//dm-util.s3.amazonaws.com/duda_website/img/home/one/mobile-bg.jpg) no-repeat;
+		background-size: cover;
+	}
+
+	.one-home.p50-0 {
+		padding-top: 0;
+	}
+
+	.one-home .p150-0-0 {
+		padding-top: 0;
+	}
+
+	.one-home .p125-0-0 {
+		padding-top: 50px;
+	}
+
+	.blue {
+		background-color: #fff;
+		color: #727272;
+	}
+
+	.blue h3 {
+		color: #727272;
+		padding-bottom: 20px;
+	}
+
+	.m125-0-0-topper {
+		margin-top: 0 !important;
+	}
+
+	.m125-0-0 {
+		margin-top: 75px;
+	}
+
+	.medium-p100-0-0 {
+		padding-top: 100px;
+	}
+
+	.content.m125-0-0 {
+		margin-top: 0;
+	}
+
+	.tabs-content>.content {
+		padding: 0;
+	}
+
+	.medium-down-centered {
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+		float: none!important;
+	}
+
+	.medium-up-br {
+		display: none;
+	}
+
+	.partners #header {
+		top:325px;
+	}
+
+	.mobile-home {
+		background:url(//dm-util.s3.amazonaws.com/duda_website/img/home/mobile/mobile-bg.jpg) no-repeat;
+		background-size: cover;
+	}
+
+	.mobile-home.p60-0 {
+		padding-top: 0;
+		padding-bottom: 150px;
+	}
+
+	.mobile-features .analytics {
+		background: #fff;
+	}
+
+	.one-features .vis-to-custom {
+		background: #fff;
+	}
+
+	aside.left-off-canvas-menu img {
+		height: 25px;
+		width: auto;
+	}
+
+	.big-on-small {
+		width: 65% !important;
+	}
+
+	.pt-medium {
+		padding-top: 75px;		
+	}
+
+	form.convert-form input[type=url] {
+		width: 68%;
+		display: inline-block;
+	}
+
+@media (max-width: 56.5em) {
+
+	.text-left-small {
+		text-align: center !important;
+	}
+
+	.small-choice.top-bar {
+		display: none !important;
+	}
+
+	nav.tab-bar {
+		z-index: 100;
+	}
+
+	.m125-0-0 {
+		margin-top: 0;
+	}
+
+	.partners #header {
+		top:325px;
+	}
+
+	img.special-size {
+		width: 100% !important;
+	}
+
+	.content.m125-0-0 {
+		margin-top: 0;
+	}
+}
+
+@media (max-width: 40em) {
+	p {
+		font-size: 1.1rem;
+	}
+	.logo {
+		width: 50%;
+	}
+	.mobile-bold {
+		font-weight: 600;
+	}
+
+	.text-left-small {
+		text-align: left !important;
+	}
+
+	.partners #header {
+		top:325px;
+		left: 0;
+		width: 100%;
+	}
+
+	form.convert-form input[type="text"], form.convert-form input[type=url], form.convert-form button {
+		width: 100%;
+		height: 100%;
+		font-size: 1.25rem;
+		padding: 15px;
+	}
+
+	form.convert-form button {
+		margin: 0;
+	}
+
+	button, .button {
+		font-weight: 400 !important;
+		width: 100%;
+		height: 100%;
+		padding: 15px;
+		font-size: 1.25rem;
+		margin: 0;
+	}
+
+	.big-button {
+		font-size: 1.5rem;
+	}
+
+	.fade-img {
+		display: block;
+		margin: auto;
+		width: 50%;
+		float: none !important;
+
+	}
+
+	.mobile-plans .list-height {
+		min-height: 150px;
+		max-height: 150px;
+	}
+
+	.border-sides.border-bottom {
+		border: none;
+	}
+
+	.partner-tabs {
+		width: 30% !important;
+	}
+
+	.pb-small {
+		padding-bottom: 150px !important;
+	}
+
+	.m125-0-0 {
+		margin-top: 0;
+	}
+
+	.p40-0-0 {
+		padding-top: 0;
+	}
+
+	.p50-0 {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
+	.p80-0-0 {
+		padding-top: 0;
+	}
+
+	.p40-0 > .p40-0 {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
+	.p40-0 > .p50-0 {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+
+	.p60-0 {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+
+	.button {
+		font-weight: 400 !important;
+		width: 100%;
+	}
+
+	.partners #header .compare {
+		padding: 0 20px;
+	}
+
+	.partners #header a {
+		padding-top: 10%;
+		padding-left: 0;
+		text-align: center;
+		font-size: 0.95rem;
+	}
+
+	.partner-tabs.active:not(.compare) {
+		background-position: 50% 20%;
+	}
+
+	.partner-tabs:not(.compare) {
+		background-position: 50% 20%;
+	}
+
+	.partner-tabs:hover:not(.compare) {
+		background-position: 50% 20%;
+	}
+
+	.partners .p80-0-0 {
+		padding-top: 20px;
+	}
+	.pt-medium {
+		padding-top: 0;		
+	}
+
+	.p150-0-0 {
+		padding-top: 20px !important;
+		padding-bottom: 20px;
+	}
+
+	.small-no-break {
+    	display: none;
+  	}
+  .header-box {
+    min-height: 550px;
+  }
+  .m80-0-0 {
+    margin-top: 0 !important;
+  }
+  .home-btn-center {
+    width: 100% !important;
+  }
+  .height-400 {
+    height: auto !important;
+  }
+  .p100-0-0 {
+    padding-top: 20px !important;
+  }
+  .one-home > .row.p125-0-0 {
+  	padding-top: 25px;
+  }
+
+
+  nav.tab-bar .middle.tab-bar-section img {
+  	max-height: 30px;
+  }
+
+  .small-height-250 {
+  	height: 250px;
+  }
+
+ .one-landing .small-logo {
+  	width: 50%;
+  }
+
+  .small-text {
+  	font-size: .75rem;
+  }
+}

@@ -1,0 +1,5 @@
+/* DudaOne with URL Bar */
+form.d1-convert > input[type="text"] {
+	padding: 20px;
+	font-size: 1rem;
+}
