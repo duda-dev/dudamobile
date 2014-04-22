@@ -1,5 +1,5 @@
 //Logged in or not
-var api_url = "http://my.dudamobile.com/api/uis/accounts/current";
+var api_url = domain + "/api/uis/accounts/current";
 
 $.ajax({
    type: 'GET',
@@ -16,11 +16,21 @@ $.ajax({
 		$('li.username>a').html(json.name);
 		$('.my-sites').show();
 		$('.login').hide();
+		$('.sign-up').hide();
+		//Hide signup on D1 landing page
+		$('.home-reg').hide();
+		$('.logged-in-btn').show();
 
 		//Reseller
-		$('.partner-design-purchase').attr('href', 'http://my.dudamobile.com/home/payment/purchase/reseller');
+		$('.partner-design-purchase').attr('href', domain + '/home/payment/purchase/reseller');
 		//White Label
-		$('.partner-white-purchase').attr('href', 'http://my.dudamobile.com/home/payment/purchase/wl_reseller');
+		$('.partner-white-purchase').attr('href', domain + '/home/payment/purchase/wl_reseller');
+		//Hide partner line
+		var allRoles = (json.roles);
+		if (allRoles.indexOf('RESELLER' || 'WL_RESELLER') > -1) {
+			$('.partner-line').css({'visibility': 'hidden'});
+			console.log('hiding partner line');
+		}
 		}
 },
 error: function(e) {
@@ -32,7 +42,7 @@ error: function(e) {
 //DudaOne Sign Up
 $(function () {
 	function showError(msg) {
-		$("form label.error").first().text(msg).fadeIn().delay(5000).fadeOut();	
+		$("form label.error-message").text(msg).fadeIn().delay(5000).fadeOut();	
 	}
 	$("form.mobile-sign-up").on("submit",function (e) {
 		var form = $(this),
@@ -41,15 +51,15 @@ $(function () {
 			pwd2 = form.find("[name='pwd2']").val();
 		e.preventDefault();
 		if (userName.trim().length == 0) {
-			$('label[for="userName"]').addClass('error');
+			$('label[for="userName"]').addClass('error').delay(5000).queue(function(next){$(this).removeClass("error")});
 			showError("User name is required");
 		}
 		else if (pwd.trim().length == 0) {
-			$('label[for="pwd"]').addClass('error');
+			$('label[for="pwd"]').addClass('error').delay(5000).queue(function(next){$(this).removeClass("error")});
 			showError("Password is required");
 		}
 		else if (pwd != pwd2) {
-			$('label[for="pwd2"]').addClass('error');
+			$('label[for="pwd2"]').addClass('error').delay(5000).queue(function(next){$(this).removeClass("error")});
 			showError("Passwords should match");			
 		}
 		else {

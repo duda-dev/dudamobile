@@ -7,7 +7,7 @@ module.exports = function(grunt) {
     cssmin: {
       combine: {
         files: {
-          'css/min/foundation.min.css': ['css/normalize.css', 'css/foundation.css', 'css/main.css', 'css/extra-queries.css']
+          'css/min/foundation.min.css': ['css/normalize.css', 'css/foundation.css', 'css/main.css', 'css/old-verticals.css', 'css/extra-queries.css']
         }
       }
     },
@@ -20,8 +20,8 @@ module.exports = function(grunt) {
           'js/jquery.stellar.min.js',
           'js/waypoints.min.js',
           'js/common.js',
-          'js/staging-helpers.js',
           'js/login.js',
+          'js/staging-helpers.js',
           'js/price-testing.js',
           'js/splitscreen.js',
           'js/landing.js',

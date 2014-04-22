@@ -1897,8 +1897,9 @@ meta.foundation-mq-topbar {
 button, .button {
   cursor: pointer;
   font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  font-weight: 500;
   line-height: normal;
+  letter-spacing: .03rem;
   margin: 0 0 1.25rem;
   position: relative;
   text-decoration: none;
@@ -2302,7 +2303,7 @@ a.th {
   .pricing-table .title {
     position: relative;
     color: #fff;
-    padding: .9375rem 1.25rem;
+    padding: .9375rem;
     font-weight: 300;
     font-size: 1.5rem;
     font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Helvetica,Arial,sans-serif; }
@@ -3958,7 +3959,7 @@ ul.off-canvas-list {
   background: white;
   border: solid 1px #cccccc;
   font-size: 16px;
-  z-index: 1000;
+  z-index: 99;
   margin-top: 2px;
   max-width: 200px; }
   .f-dropdown > *:first-child {
@@ -3988,7 +3989,7 @@ ul.off-canvas-list {
     position: absolute;
     top: -14px;
     left: 9px;
-    z-index: 98; }
+    z-index: 95; }
   .f-dropdown.right:before {
     left: auto;
     right: 10px; }
@@ -4021,7 +4022,7 @@ ul.off-canvas-list {
     color: #f2f2f2;
     border: solid 1px #000;
     font-size: 16px;
-    z-index: 99;
+    z-index: 95;
     max-width: 200px; }
     .f-dropdown.content > *:first-child {
       margin-top: 0; }
@@ -4449,7 +4450,7 @@ input.error,
 textarea.error {
   margin-bottom: 0; }
 
-label.error {
+label.error, label.error-message {
   color: #c60f13 !important; }
 
 [class*="block-grid-"] {

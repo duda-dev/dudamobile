@@ -18,7 +18,6 @@ if(dmSplitScreen || d1SplitScreen){
 			e.preventDefault();
 			$(intro_choice).fadeOut();
 			$('body').removeClass('fixed');
-			$()
 		}
 	});
 
@@ -27,6 +26,8 @@ if(dmSplitScreen || d1SplitScreen){
 			e.preventDefault();
 			$(intro_choice).fadeOut();
 			$('body').removeClass('fixed');
+			$('li.mobile').addClass('active-left');
+			$('.arrow-down').show();
 		}
 	});
 }
@@ -44,4 +45,5 @@ if (check_hash === "#no_intro") {
 
 if (is_tablet_or_smaller) {
 	intro_choice.hide();
+	$('body').removeClass('fixed');
 }

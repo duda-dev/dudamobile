@@ -3,7 +3,7 @@ var scrollToTemplates = $('#templates');
 $('.landing a[href$="#templates"]').on('click', function() {
 	$('html, body').animate({
 		scrollTop: scrollToTemplates.offset().top
-	}, 1000);
+	}, 800);
 	return false;
 });
 

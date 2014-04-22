@@ -1521,15 +1521,8 @@ if (dudaUrl != null && dudaUrl !== 'null') {
 	$(".convert-form").submit();
 }
 
-//Helpers for correct staging links
-
-$("a.login").attr("href", domain+"/home");
-$("a.sign-up").attr("href", domain+"/signup");
-$("li.my-sites > a.mySites").attr("href",domain+"/home");
-$("#username-dropdown li:first-of-type a").attr("href",domain+"/home/dashboard?account");
-$("#username-dropdown li:nth-of-type(2) a").attr("href",domain+"/logout?next=http://www.dudamobile.com/");
 //Logged in or not
-var api_url = "http://my.dudamobile.com/api/uis/accounts/current";
+var api_url = domain + "/api/uis/accounts/current";
 
 $.ajax({
    type: 'GET',
@@ -1546,11 +1539,21 @@ $.ajax({
 		$('li.username>a').html(json.name);
 		$('.my-sites').show();
 		$('.login').hide();
+		$('.sign-up').hide();
+		//Hide signup on D1 landing page
+		$('.home-reg').hide();
+		$('.logged-in-btn').show();
 
 		//Reseller
-		$('.partner-design-purchase').attr('href', 'http://my.dudamobile.com/home/payment/purchase/reseller');
+		$('.partner-design-purchase').attr('href', domain + '/home/payment/purchase/reseller');
 		//White Label
-		$('.partner-white-purchase').attr('href', 'http://my.dudamobile.com/home/payment/purchase/wl_reseller');
+		$('.partner-white-purchase').attr('href', domain + '/home/payment/purchase/wl_reseller');
+		//Hide partner line
+		var allRoles = (json.roles);
+		if (allRoles.indexOf('RESELLER' || 'WL_RESELLER') > -1) {
+			$('.partner-line').css({'visibility': 'hidden'});
+			console.log('hiding partner line');
+		}
 		}
 },
 error: function(e) {
@@ -1562,7 +1565,7 @@ error: function(e) {
 //DudaOne Sign Up
 $(function () {
 	function showError(msg) {
-		$("form label.error").first().text(msg).fadeIn().delay(5000).fadeOut();	
+		$("form label.error-message").text(msg).fadeIn().delay(5000).fadeOut();	
 	}
 	$("form.mobile-sign-up").on("submit",function (e) {
 		var form = $(this),
@@ -1571,15 +1574,15 @@ $(function () {
 			pwd2 = form.find("[name='pwd2']").val();
 		e.preventDefault();
 		if (userName.trim().length == 0) {
-			$('label[for="userName"]').addClass('error');
+			$('label[for="userName"]').addClass('error').delay(5000).queue(function(next){$(this).removeClass("error")});
 			showError("User name is required");
 		}
 		else if (pwd.trim().length == 0) {
-			$('label[for="pwd"]').addClass('error');
+			$('label[for="pwd"]').addClass('error').delay(5000).queue(function(next){$(this).removeClass("error")});
 			showError("Password is required");
 		}
 		else if (pwd != pwd2) {
-			$('label[for="pwd2"]').addClass('error');
+			$('label[for="pwd2"]').addClass('error').delay(5000).queue(function(next){$(this).removeClass("error")});
 			showError("Passwords should match");			
 		}
 		else {
@@ -1601,8 +1604,15 @@ $(function () {
 		}
 	});	
 });
+//Helpers for correct staging links
+
+$("a.login").attr("href", domain+"/home");
+$("a.sign-up").attr("href", domain+"/signup");
+$("li.my-sites > a.mySites").attr("href",domain+"/home");
+$("#username-dropdown li:first-of-type a").attr("href",domain+"/home/dashboard?account");
+$("#username-dropdown li:nth-of-type(2) a").attr("href",domain+"/logout?next=http://www.dudamobile.com/");
 //DudaOne Price Testing
-var price_test_url = domain + '/api/uis/anonymous/sites/one/pricing';
+var price_test_url = domain + '/api/uis/anonymous/sites/one/pricing' + '?v=1.0';
 
 $.ajax({
    type: 'GET',
@@ -1654,6 +1664,8 @@ if(dmSplitScreen || d1SplitScreen){
 			e.preventDefault();
 			$(intro_choice).fadeOut();
 			$('body').removeClass('fixed');
+			$('li.mobile').addClass('active-left');
+			$('.arrow-down').show();
 		}
 	});
 }
@@ -1671,13 +1683,14 @@ if (check_hash === "#no_intro") {
 
 if (is_tablet_or_smaller) {
 	intro_choice.hide();
+	$('body').removeClass('fixed');
 }
 //Smooth Scroll
 var scrollToTemplates = $('#templates');
 $('.landing a[href$="#templates"]').on('click', function() {
 	$('html, body').animate({
 		scrollTop: scrollToTemplates.offset().top
-	}, 1000);
+	}, 800);
 	return false;
 });
 
@@ -1702,7 +1715,7 @@ else if (pwd.trim().length === 0) {
 	return;
 } else {
 	e.preventDefault();
-	var url = 'http://my.dudamobile.com/api/public/signup?....&operationOrigin=DESIGN_WEB&_dm_op_source=dudaone-register';
+	var url = domain + '/api/public/signup?....&operationOrigin=DESIGN_WEB&_dm_op_source=dudaone-register';
 	$.ajax({url: url,
 		data: {userName: userName, pwd: pwd},
 		contentType : 'application/json',
@@ -1723,6 +1736,7 @@ else if (pwd.trim().length === 0) {
 	});
 }
 });
+
 function showError(input, msg) {
 	input.parent().find('label.error').text(msg).fadeIn();
 }

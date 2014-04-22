@@ -15,7 +15,7 @@ else if (pwd.trim().length === 0) {
 	return;
 } else {
 	e.preventDefault();
-	var url = 'http://my.dudamobile.com/api/public/signup?....&operationOrigin=DESIGN_WEB&_dm_op_source=dudaone-register';
+	var url = domain + '/api/public/signup?....&operationOrigin=DESIGN_WEB&_dm_op_source=dudaone-register';
 	$.ajax({url: url,
 		data: {userName: userName, pwd: pwd},
 		contentType : 'application/json',

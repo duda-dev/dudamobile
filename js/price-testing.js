@@ -1,5 +1,5 @@
 //DudaOne Price Testing
-var price_test_url = domain + '/api/uis/anonymous/sites/one/pricing';
+var price_test_url = domain + '/api/uis/anonymous/sites/one/pricing' + '?v=1.0';
 
 $.ajax({
    type: 'GET',
